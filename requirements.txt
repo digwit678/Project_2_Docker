@@ -10,3 +10,4 @@ protobuf==3.20.1
 psutil
 scipy
 scikit-learn
+six
