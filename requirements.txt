@@ -1,11 +1,11 @@
-torch==1.13.0
+torch==1.13.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 tensorboard==2.8.0
 pytorch-lightning==1.9.5
 transformers==4.34.1
-# removed for task 3 tensorflow==2.8.1
+# removed for task 3: tensorflow==2.8.1
 pyparsing==2.4.7
 protobuf==3.20.1
-# removed for task 3 datasets 
+# removed for task 3: datasets 
 psutil
 scipy
 scikit-learn
