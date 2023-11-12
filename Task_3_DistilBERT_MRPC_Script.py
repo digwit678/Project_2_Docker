@@ -309,7 +309,7 @@ def run_training_iteration(iteration):
         logger=TensorBoardLogger('lightning_logs', name=f'run_{iteration}'),
         #default_root_dir=args.checkpoint_dir,
         #callbacks=[checkpoint_callback] , remove checkpoint callback to save space on docker playground
-        checkpoint_callback=False
+        enable_checkpointing=False
     )
 
     # Run training
