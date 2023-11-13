@@ -69,19 +69,19 @@ class GLUEDataModule(LightningDataModule):
         import pandas as pd
         #df = pd.read_csv(file_path, delimiter='\t', header=None, names=['Quality', 'ID1', 'ID2', 'String1', 'String2'])
         df = pd.read_csv(file_path, delimiter='\t', quoting=3, header=0, names=['Quality', 'ID1', 'ID2', 'String1', 'String2'])
-        print(df.head())
-        print("Loaded data size:", df.shape)
+        #print(df.head())
+        #print("Loaded data size:", df.shape)
         return df[['Quality', 'String1', 'String2']].dropna()
 
     def setup(self, stage: str):
         if stage == 'fit' or stage is None:
             self.train_dataset = self.convert_to_features(self.train_data)
             assert self.train_dataset is not None, "Train dataset creation failed"
-            print("Train dataset size:", len(self.train_dataset))
+            #print("Train dataset size:", len(self.train_dataset))
         if stage == 'test' or stage is None:
             self.test_dataset = self.convert_to_features(self.test_data)
             assert self.test_dataset is not None, "Test dataset creation failed"
-            print("Test dataset size:", len(self.test_dataset))
+            #print("Test dataset size:", len(self.test_dataset))
 
 
     def train_dataloader(self):
@@ -95,24 +95,6 @@ class GLUEDataModule(LightningDataModule):
 
     def test_dataloader(self):
         return DataLoader(self.test_dataset, batch_size=self.eval_batch_size)
-
-    """
-    def convert_to_features(self, example_batch):
-        if example_batch.empty:
-            raise ValueError("Input DataFrame is empty")
-        texts_or_text_pairs = list(zip(example_batch['String1'], example_batch['String2']))
-        features = self.tokenizer.batch_encode_plus(
-            texts_or_text_pairs, max_length=self.max_seq_length, pad_to_max_length=True, truncation=True
-        )
-        labels = torch.tensor(example_batch['Quality'].astype(int).values)
-
-        # Convert features to tensors and create TensorDataset
-        input_ids = torch.tensor(features['input_ids'], dtype=torch.long)
-        attention_mask = torch.tensor(features['attention_mask'], dtype=torch.long)
-
-        dataset = TensorDataset(input_ids, attention_mask, labels)
-        return dataset
-    """
 
     def convert_to_features(self, example_batch):
         if example_batch.empty:
@@ -206,7 +188,7 @@ class GLUETransformer(LightningModule):
         # Safely handle the 'outputs' list
         if not outputs:
             # Handle case when 'outputs' is empty
-            print('No outputs to process for training epoch end.')
+            #print('No outputs to process for training epoch end.')
             self.log('train_loss_epoch', float('nan'), on_epoch=True, prog_bar=True, logger=True)
             return
 
@@ -219,7 +201,7 @@ class GLUETransformer(LightningModule):
             self.log('train_loss_epoch', train_loss_mean, on_epoch=True, prog_bar=True, logger=True)
         else:
             # Handle case when 'train_losses' is empty
-            print('No training losses recorded in this epoch.')
+            #print('No training losses recorded in this epoch.')
             self.log('train_loss_epoch', float('nan'), on_epoch=True, prog_bar=True, logger=True)
 
     def configure_optimizers(self):
@@ -253,9 +235,9 @@ import psutil
 
 # Log the input and output resources
 writer = SummaryWriter()
-print("Before Seed")
+#print("Before Seed")
 seed_everything(42)
-print("After Seed")
+#print("After Seed")
 # Create a SummaryWriter instance for TensorBoard logging
 # writer = SummaryWriter(log_dir=f'runs/glue_experiment_{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
 
@@ -287,20 +269,6 @@ def run_training_iteration(iteration):
     )
 
 
-    """
-    
-    remove checkpoint callback to save space on docker playground
-    
-    checkpoint_callback = ModelCheckpoint(
-        dirpath=args.checkpoint_dir,
-        filename=f"checkpoint-{iteration}" + "-{epoch:02d}-{val_loss:.2f}",
-        save_top_k=1,  # Save the best checkpoint based on the lowest validation loss
-        verbose=True,
-        monitor='val_loss',  # Or another metric that you wish to monitor
-        mode='min'  # Or 'max' if the monitored metric should be maximized
-    )
-    """
-
     # Set up trainer
     trainer = Trainer(
         max_epochs=3,
@@ -316,11 +284,12 @@ def run_training_iteration(iteration):
     trainer.fit(model, datamodule=dm)
 
 
-print("Before training loop")
+#print("Before training loop")
 training_runs = 2
 # Loop for 20 training runs
 for i in range(1, training_runs):
-    print(f"Iteration {i} started.")
     run_training_iteration(i)
-    print(f"Iteration {i} finished.")
+    #print(f"Iteration {i} finished.")
 
+
+#%%
