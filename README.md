@@ -42,7 +42,8 @@ The base folder of the GitHub repository includes:
 
 6. Follow the prompts in the terminal to complete the setup.
 
-7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. ** Ensure the port 6006 is not used by another service and is not blocked by your firewall **.   For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below. 
+7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. **Ensure the port 6006 is not used by another service and is not blocked by your firewall**.  
+For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below. 
 
 ### Manual Setup Steps
 1. Open a terminal.
