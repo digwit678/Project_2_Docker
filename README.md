@@ -28,10 +28,11 @@ The base folder of the GitHub repository includes:
 - `Dockerfile`: Configuration file for creating the Docker image.
 
 ### Executing the Setup Script
-1. Choose the appropriate setup script based on your operating system.
-2. Open a terminal (Command Prompt or PowerShell for Windows, Terminal for Linux).
-3. Navigate to the directory where you want to clone the repository.
-4. Execute the setup script:
+1. Choose the appropriate docker_setup_desktop_[linux or windows] script based on your operating system.
+2. Open a terminal (PowerShell for Windows, Terminal for Linux).
+3. Make sure Docker is running
+4. Navigate to the directory where you want to clone the repository.
+5. Execute the setup script:
    - For Linux:
      ```
      bash docker_setup_desktop_linux.sh
@@ -39,9 +40,9 @@ The base folder of the GitHub repository includes:
    - For Windows:
      Right-click on `docker_setup_desktop_windows.ps1` and select "Run with PowerShell".
 
-5. Follow the prompts in the terminal to complete the setup.
+6. Follow the prompts in the terminal to complete the setup.
 
-6. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. Ensure the port 6006 b is not used by another service and is not blocked by your firewall. For instructions on how to change the tensoboard logging port pls refer to the **Troubleshooting** section below. 
+7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. ** Ensure the port 6006 is not used by another service and is not blocked by your firewall **.   For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below. 
 
 ### Manual Setup Steps
 1. Open a terminal.
@@ -55,7 +56,7 @@ The base folder of the GitHub repository includes:
 ### Troubleshooting
 - Docker Build Fails: Ensure Docker is running and you have internet connectivity.
 - TensorBoard Not Accessible: Check Docker container status and port mapping.
-- Change TensorBoard Port: If port 6006 is in use, update the Dockerfile and start.sh to use a different port.
+- Change TensorBoard Port: If port 6006 cannot be used, update the Dockerfile and start.sh to use a different port.
 
 ## Docker Playground Setup
 Note: Running on Docker Playground is experimental and may face resource constraints.
