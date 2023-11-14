@@ -1,4 +1,4 @@
--f https://download.pytorch.org/whl/torch_stable.html
+#-f https://download.pytorch.org/whl/torch_stable.html
 # torch==1.13.0+cpu
 tensorboard==2.8.0
 pytorch-lightning==1.9.5
@@ -13,3 +13,4 @@ scipy
 six
 pandas
 numpy
+--extra-index-url https://download.pytorch.org/whl/cpu torch
