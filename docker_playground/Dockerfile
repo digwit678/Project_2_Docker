@@ -5,7 +5,7 @@ FROM python:3.10-alpine
 WORKDIR /usr/src/app
 
 # Install required system dependencies
-RUN apk add --no-cache gcc python3-dev
+RUN apk add --no-cache gcc musl-dev python3-dev
 # musl-dev libffi-dev python3-dev
 # Copy only necessary files into the container from the docker_playground directory
 COPY . /usr/src/app/
