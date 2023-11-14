@@ -1,11 +1,12 @@
 # Use an Alpine-based Python 3.10 image for a smaller footprint
-FROM python:3.10-alpine
+FROM python:3.10-slim-buster
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
 # Install required system dependencies
-RUN apk add --no-cache gcc musl-dev python3-dev
+#RUN apk add --no-cache gcc musl-dev python3-dev been used for alpine
+
 # musl-dev libffi-dev python3-dev
 # Copy only necessary files into the container from the docker_playground directory
 COPY . /usr/src/app/
