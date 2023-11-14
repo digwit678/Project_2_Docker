@@ -5,7 +5,9 @@ FROM python:3.10-slim-buster
 WORKDIR /usr/src/app
 
 # Install required system dependencies
-#RUN apk add --no-cache gcc musl-dev python3-dev been used for alpine
+RUN sudo apk add --no-cache gcc python3-dev
+
+# been used for alpine musl-dev
 
 # musl-dev libffi-dev python3-dev
 # Copy only necessary files into the container from the docker_playground directory
