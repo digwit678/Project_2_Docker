@@ -1,22 +1,27 @@
-# Use an official Python 3.10 runtime as a parent image
-FROM python:3.10-slim
+# Use an Alpine-based Python 3.10 image for a smaller footprint
+FROM python:3.10-alpine
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . /usr/src/app
+# Install required system dependencies
+RUN apk add --no-cache gcc musl-dev libffi-dev
 
-# Install any needed packages specified in requirements.txt
+# Install Python packages
+# Copy the requirements file into the container
+COPY requirements.txt .
+# Install packages from the requirements file
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy only necessary files into the container from the docker_playground directory
+# This assumes you've organized the necessary files for Docker Playground in the docker_playground directory
+COPY docker_playground/ /usr/src/app/
+
+# Make the start script executable
+RUN chmod +x /usr/src/app/start.sh
 
 # Expose port for TensorBoard
 EXPOSE 6006
 
-# Copy the start script into the container and make it executable
-COPY start.sh /usr/src/app/start.sh
-RUN chmod +x /usr/src/app/start.sh
-
-# Set the default command to execute the Python script
+# Set the default command to execute the start script which in turn runs the Python script
 CMD ["/usr/src/app/start.sh"]
-
