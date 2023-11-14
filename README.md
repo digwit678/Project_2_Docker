@@ -42,31 +42,45 @@ The base folder of the GitHub repository includes:
 
 6. Follow the prompts in the terminal to complete the setup.
 
-7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. **Ensure the port 6006 is not used by another service and is not blocked by your firewall** (For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below.)
+7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. **Ensure the port 6006 is not used by another service and is not blocked by your firewall** (For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below).
 
 ### Manual Setup Steps
 1. Open a terminal.
 2. Execute the following commands in order:
    - Clone the repository
+     ```bash
+     git clone https://github.com/digwit678/Project_2_Docker.git
+     ````
    - Navigate to the repository directory
+      ```bash
+      cd Project_2_Docker
+      ````
    - Build the Docker image
+      ```bash
+      docker build -t project2_docker .
+      ```
    - Run the Docker container
-   - Access TensorBoard
+      ```bash
+      docker run -p 6006:6006 project2_docker
+      ```  
+   - <a href="http://localhost:6006" target="_blank">Access TensorBoard at http://localhost:6006</a>
 
 ### Troubleshooting
 - Docker Build Fails: Ensure Docker is running and you have internet connectivity.
 - TensorBoard Not Accessible: Check Docker container status and port mapping.
-- Change TensorBoard Port: If port 6006 cannot be used, update the Dockerfile and start.sh to use a different port.
+- Change TensorBoard Port: If port 6006 cannot be used, ***update the port mapping*** in the Dockerfile (docker run -p ***6006:6006*** project2_docker) and start.sh (tensorboard --logdir=/usr/src/app/lightning_logs --port=***6006*** --bind_all &) to use a different port.
 
 ## Docker Playground Setup
 Note: Running on Docker Playground is experimental and may face resource constraints.
 
 ### Access Docker Playground
-Visit Docker Playground and start a session.
+<a href="https://labs.play-with-docker.com/" target="_blank">Visit Docker Playground</a>
+and start a session.
 
 ### Steps for Docker Playground
-1. Clone the repository in the Docker Playground terminal.
-2. Build the Docker image.
-3. Run the Docker container.
-4. Click the "6006" link in the Playground UI to view TensorBoard.
-5. The script execution in Playground may face interruptions due to resource limits.
+#### Automated Setup Using Docker Desktop  
+1. Drag and drop `docker_setup_playground.sh` found in `Project_2_Docker/docker_playground/` directory into the docker playground shell to upload it
+2. Run the automated setup script in the current sessions shell:  
+    ```bash
+      sh docker_setup_playground.sh
+    ```
