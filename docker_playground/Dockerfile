@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 RUN apk add --no-cache gcc
 # musl-dev libffi-dev python3-dev
 # Copy only necessary files into the container from the docker_playground directory
-COPY Project_2_Docker/docker_playground/ /usr/src/app/
+COPY . /usr/src/app/
 
 # Install Python packages from the requirements file
 RUN pip install --no-cache-dir -r requirements.txt
