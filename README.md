@@ -37,11 +37,11 @@ docker build -t project2_docker .
 docker run -p 6006:6006 project2_docker
 ```
 3. Access TensorBoard
-
-Open http://localhost:6006 to monitor the training progress on TensorBoard. Ensure the port is free and not blocked by your firewall. 
+  
+[Open]( http://localhost:6006) to monitor the training progress on TensorBoard. Ensure the port is free and not blocked by your firewall. 
 
 ## Docker Playground Setup
 Execution on Docker Playground is experimental and may face resource constraints.
 
-### Access Docker Playground
-[Visit Docker Playground](https://labs.play-with-docker.com/)  and start a session.
+### Access Docker Playground  
+[Visit Docker Playground](https://labs.play-with-docker.com/) and start a session.
