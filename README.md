@@ -20,19 +20,19 @@ Before beginning, ensure you have the following installed:
 ```` 
 This will run the following bash commands: 
 
-#### 1 Clone the Repository
+#### a) Clone the Repository
 ```bash
 git clone https://github.com/digwit678/Project_2_Docker.git
 ````
-#### 2 Change to Base Folder
+#### b) Change to Base Folder
 ```bash
 cd Project_2_Docker
 ````
-#### 3 Build the Docker Image
+#### c) Build the Docker Image
 ```bash
 docker build -t project2_docker .
 ```
-#### 4 Run the Docker Container
+#### d) Run the Docker Container
 ```bash
 docker run -p 6006:6006 project2_docker
 ```
