@@ -5,17 +5,13 @@ FROM python:3.10-alpine
 WORKDIR /usr/src/app
 
 # Install required system dependencies
-RUN apk add --no-cache gcc musl-dev libffi-dev python3-dev
-
-# Install Python packages
-# Copy the requirements file into the container
-COPY requirements.txt .
-# Install packages from the requirements file
-RUN pip install --no-cache-dir -r requirements.txt
-
+RUN apk add --no-cache gcc
+# musl-dev libffi-dev python3-dev
 # Copy only necessary files into the container from the docker_playground directory
-# This assumes you've organized the necessary files for Docker Playground in the docker_playground directory
-COPY docker_playground/ /usr/src/app/
+COPY Project_2_Docker/docker_playground/ /usr/src/app/
+
+# Install Python packages from the requirements file
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Make the start script executable
 RUN chmod +x /usr/src/app/start.sh
