@@ -28,10 +28,10 @@ The base folder of the GitHub repository includes:
 - `Dockerfile`: Configuration file for creating the Docker image.
 
 ### Executing the Setup Script
-1. Choose the appropriate `docker_setup_desktop_[linux or windows].sh` script based on your operating system and download it directly from github by:
-   a.) click on the chosen shell/powershell script in repository main folder
-   b.) navigate to the upper right corner below your account symbol + open "More file actions" menu "..."
-   c.) Chose *Download* to only load the setup script. 
+1. Choose the appropriate `docker_setup_desktop_[linux or windows].sh` script based on your operating system and download it directly from github by: <br></br>
+   a.) Click the chosen shell/powershell script in repository main folder\
+   b.) Navigate to the upper right corner below your account symbol + open "More file actions" menu "..."\
+   c.) Chose *Download* to only load the selected setup script.
 2. Open a terminal (PowerShell for Windows, Terminal for Linux).
 3. Make sure Docker is running
 4. Navigate to the directory where you want to clone the repository.
@@ -46,7 +46,7 @@ The base folder of the GitHub repository includes:
 
 6. Follow the prompts in the terminal to complete the setup.
 
-7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. **Ensure the port 6006 is not used by another service and is not blocked by your firewall** (For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below).
+7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. <br></br>  **Ensure the port 6006 is not used by another service and is not blocked by your firewall** (For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below).
 
 ### Manual Setup Steps
 1. Open a terminal.
