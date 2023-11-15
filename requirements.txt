@@ -1,16 +1,16 @@
-#-f https://download.pytorch.org/whl/torch_stable.html
-# torch==1.13.0+cpu
+# CPU-only version of PyTorch
+torch==1.13.0+cpu
 tensorboard==2.8.0
 pytorch-lightning==1.9.5
 transformers==4.34.1
 # removed for task 3: tensorflow==2.8.1
 pyparsing==2.4.7
 protobuf==3.20.1
-# removed for task 3: datasets 
+datasets #removed in task 3
 psutil
 scipy
 #scikit-learn
 six
 pandas
 numpy
---extra-index-url https://download.pytorch.org/whl/cpu torch
+--extra-index-url https://download.pytorch.org/whl/cpu
