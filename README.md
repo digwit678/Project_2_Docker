@@ -42,7 +42,6 @@ The base folder of the GitHub repository includes:
      bash docker_setup_desktop_linux.sh
      ```
    - For Windows: <br></br>
-     <br></br> 
      Right-click on `docker_setup_desktop_windows.ps1` and select "Run with PowerShell".
 
 6. Follow the prompts in the terminal to complete the setup.
