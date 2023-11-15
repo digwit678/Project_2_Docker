@@ -1,13 +1,13 @@
 # Project 2: Docker - Machine Learning Operations
 
 ## Overview
-This repository contains the Dockerized ML project for the MRPC task using the DistilBERT model. Instructions are provided for setting up and running the project both locally using Docker Desktop and on Docker Playground.
+This repository contains the Dockerized ML project for the MRPC task using the DistilBERT model. Instructions are provided for setting up and running the project automatically or manually both locally using Docker Desktop and on Docker Playground .
 
 ## Prerequisites
 - Docker  (<a href="https://docs.docker.com/get-docker/" target="_blank">Installation Guide</a>)
 - Git (<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Installation Guide</a>)
 
-## Automated Setup Using Docker Desktop
+## Docker Desktop Setup
 The repository includes two scripts for automating the setup process:
 - `docker_setup_desktop_linux.sh` for Linux users
 - `docker_setup_desktop_windows.ps1` for Windows users
@@ -27,7 +27,7 @@ The base folder of the GitHub repository includes:
 - `docker_setup_desktop_windows.ps1`: PowerShell script to automate the setup process on Windows.
 - `Dockerfile`: Configuration file for creating the Docker image.
 
-### Executing the Setup Script
+### Automated Setup Using Docker Desktop
 1. Choose the appropriate `docker_setup_desktop_[linux or windows].sh` script based on your operating system and download it directly from github by: <br></br>
    a) Click the chosen shell/powershell script in repository main folder\
    b) Navigate to the upper right corner below your account symbol + open "More file actions" menu "..."\
@@ -48,7 +48,7 @@ The base folder of the GitHub repository includes:
 
 7. After running the setup script, the Docker container will start, and you can <a href="http://localhost:6006" target="_blank">access TensorBoard at http://localhost:6006</a> to monitor the training progress. <br></br>  **Ensure the port 6006 is not used by another service and is not blocked by your firewall** (For instructions on how to change the tensoboard logging port pls refer to the ***Troubleshooting*** section below).
 
-### Manual Setup Steps
+### Manual Setup Using Docker Desktop
 1. Open a terminal.
 2. Execute the following commands:<br></br>
    a) Clone the repository
@@ -107,7 +107,7 @@ and start a session.
 
 ### Steps for Docker Playground
 Chose either to set it up automatically by using the setup script or follow the steps in the manual setup process. 
-#### Automated Setup Using Docker Desktop  
+#### Automated Setup Using Docker Playground 
 1. Drag and drop `docker_setup_playground.sh` found in `Project_2_Docker/docker_playground/` directory into the docker playground shell to upload it
 2. Run the automated setup script in the current sessions shell:  
     ```bash
