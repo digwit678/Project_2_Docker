@@ -19,7 +19,7 @@ docker build -t project2_docker .
 
 # Run the Docker container
 Write-Host "Running the Docker container..."
-docker run -p 6006:6006 project2_docker
+docker run -it -p 6006:6006 project2_docker
 
 # Indicate completion
 Write-Host "Docker container is running. Access TensorBoard at http://localhost:6006"
