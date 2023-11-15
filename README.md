@@ -50,7 +50,7 @@ The base folder of the GitHub repository includes:
 
 ### Manual Setup Steps
 1. Open a terminal.
-2. Execute the following commands:
+2. Execute the following commands:<br></br>
    a) Clone the repository
      ```bash
      git clone https://github.com/digwit678/Project_2_Docker.git
