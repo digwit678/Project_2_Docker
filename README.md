@@ -28,7 +28,10 @@ The base folder of the GitHub repository includes:
 - `Dockerfile`: Configuration file for creating the Docker image.
 
 ### Executing the Setup Script
-1. Choose the appropriate docker_setup_desktop_[linux or windows] script based on your operating system.
+1. Choose the appropriate `docker_setup_desktop_[linux or windows].sh` script based on your operating system and download it directly from github by:
+   a.) click on the chosen shell/powershell script in repository main folder
+   b.) navigate to the upper right corner below your account symbol + open "More file actions" menu "..."
+   c.) Chose *Download* to only load the setup script. 
 2. Open a terminal (PowerShell for Windows, Terminal for Linux).
 3. Make sure Docker is running
 4. Navigate to the directory where you want to clone the repository.
@@ -69,7 +72,18 @@ The base folder of the GitHub repository includes:
 - Docker Build Fails: Ensure Docker is running and you have internet connectivity.
 - TensorBoard Not Accessible: Check Docker container status and port mapping.
 - Change TensorBoard Port: If port 6006 cannot be used, ***update the port mapping*** in the Dockerfile (docker run -p ***6006:6006*** project2_docker) and start.sh (tensorboard --logdir=/usr/src/app/lightning_logs --port=***6006*** --bind_all &) to use a different port.
+- For automated (Windows) powershell setup: '/docker_setup_desktop_windows.ps1' is not recognized as an internal or external command
+  
+a) Check Execution Policy 
+```bash
+Get-ExecutionPolicy
+```  
+If the policy is set to *Restricted*, you will need to change it to allow script execution. 
 
+b) Change Execution Policy
+```bash
+Set-ExecutionPolicy RemoteSigned
+```  
 ## Docker Playground Setup
 Note: Running on Docker Playground is experimental and may face resource constraints.
 
