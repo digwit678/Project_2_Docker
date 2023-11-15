@@ -106,15 +106,15 @@ For Docker Playground, I have optimized the setup to work within the resource co
 and start a session.
 
 ### Steps for Docker Playground
+After accessing Docker Playground and starting a new session, you can clone the repository  to build and run the Docker image. Follow these steps:
 #### Automated Setup Using Docker Desktop  
 1. Drag and drop `docker_setup_playground.sh` found in `Project_2_Docker/docker_playground/` directory into the docker playground shell to upload it
 2. Run the automated setup script in the current sessions shell:  
     ```bash
       sh docker_setup_playground.sh
     ```
-After accessing Docker Playground and starting a new session, you can clone the repository and navigate to the `docker_playground` directory to build and run the Docker image. Follow these steps:
-
-1. Clone the repository:
+#### Manual Setup Using Docker Desktop  
+1. Clone the repository and navigate to the `docker_playground` directory:
    ```bash
    git clone https://github.com/digwit678/Project_2_Docker.git
    cd Project_2_Docker/docker_playground
