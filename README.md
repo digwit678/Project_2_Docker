@@ -33,7 +33,7 @@ The base folder of the GitHub repository includes:
    c) Chose *Download* to only load the selected setup script.
 2. Open a terminal (PowerShell for Windows, Terminal for Linux).
 3. Make sure Docker is running
-4. Navigate to the directory where you want to clone the repository.
+4. Navigate to the directory where you want to clone the repository and place the setup script in this folder.
 5. Execute the setup script:
    - For Linux:
 <br></br>
