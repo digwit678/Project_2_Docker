@@ -50,24 +50,24 @@ The base folder of the GitHub repository includes:
 
 ### Manual Setup Steps
 1. Open a terminal.
-2. Execute the following commands in order:
-   - Clone the repository
+2. Execute the following commands:
+   a) Clone the repository
      ```bash
      git clone https://github.com/digwit678/Project_2_Docker.git
      ````
-   - Navigate to the repository directory
+   b) Navigate to the repository directory
       ```bash
       cd Project_2_Docker
       ````
-   - Build the Docker image
+   c) Build the Docker image
       ```bash
       docker build -t project2_docker .
       ```
-   - Run the Docker container
+   d) Run the Docker container
       ```bash
       docker run -p 6006:6006 project2_docker
       ```  
-   - <a href="http://localhost:6006" target="_blank">Access TensorBoard at http://localhost:6006</a>
+   e) <a href="http://localhost:6006" target="_blank">Access TensorBoard at http://localhost:6006</a>
 
 ### Troubleshooting
 - Docker Build Fails: Ensure Docker is running and you have internet connectivity.
@@ -86,8 +86,20 @@ The base folder of the GitHub repository includes:
   ```bash
       Set-ExecutionPolicy RemoteSigned
    ```  
+
 ## Docker Playground Setup
-Note: Running on Docker Playground is experimental and may face resource constraints.
+For Docker Playground, I have optimized the setup to work within the resource constraints typically found in such environments. The `docker_playground` directory contains only the essential files needed to run the training script on the MRPC task using the DistilBERT model.  
+
+### `docker_playground` Directory Contents
+- `msr_paraphrase_test.txt` and `msr_paraphrase_train.txt`: These text files contain the MRPC dataset used for training and evaluating the model.
+- `requirements.txt`: A list of Python packages required for running the project. This file has been optimized to exclude unnecessary packages to save memory.
+- `start.sh`: A shell script that is used to start TensorBoard and execute the Python training script.
+- `Task_3_DistilBERT_MRPC_Script.py`: The Python script that conducts the training of the DistilBERT model. It has been adapted to work with local text files instead of using the datasets library.
+- `lightning_logs`: A directory that TensorBoard uses to log training progress.
+- `docker_setup_playground.sh`: A shell script that automates the process of setting up and running the Docker container in Docker Playground.
+- `Dockerfile`: A Dockerfile configured specifically for Docker Playground, with adjustments made to work within the platform's resource limitations.
+
+### Running the Project in Docker Playground
 
 ### Access Docker Playground
 <a href="https://labs.play-with-docker.com/" target="_blank">Visit Docker Playground</a>
@@ -100,3 +112,18 @@ and start a session.
     ```bash
       sh docker_setup_playground.sh
     ```
+After accessing Docker Playground and starting a new session, you can clone the repository and navigate to the `docker_playground` directory to build and run the Docker image. Follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/digwit678/Project_2_Docker.git
+   cd Project_2_Docker/docker_playground
+    ```
+2. Build the Docker image
+      ```bash
+      docker build -t project2_docker .
+      ```
+3. Run the Docker container
+      ```bash
+      docker run -p 6006:6006 project2_docker
+      ```  
