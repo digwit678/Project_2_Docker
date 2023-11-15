@@ -23,3 +23,8 @@ docker run -it -p 6006:6006 project2_docker
 
 # Indicate completion
 Write-Host "Docker container is running. Access TensorBoard at http://localhost:6006"
+
+
+# Prevent the PowerShell script from closing automatically
+Write-Host "Press any key to exit terminal..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
