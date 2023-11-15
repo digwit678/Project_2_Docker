@@ -87,6 +87,9 @@ The base folder of the GitHub repository includes:
    ```  
 
 ## Docker Playground Setup
+
+*** The memory error could not be resolved in the time given, so dockerplayground code will not run further than the start of training ***
+
 For Docker Playground, I have optimized the setup to work within the resource constraints typically found in such environments. The `docker_playground` directory contains only the essential files needed to run the training script on the MRPC task using the DistilBERT model.  
 
 ### `docker_playground` Directory Contents
