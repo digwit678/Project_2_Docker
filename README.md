@@ -19,7 +19,6 @@ The base folder of the GitHub repository includes:
 - `README.md`: Documentation file with setup instructions.
 - `requirements.txt`: List of Python packages required for the project.
 - `start.sh`: Script to start the training and TensorBoard logging.
-- `.git`: Hidden folder containing Git version control history.
 - `docker_playground/`: Directory with files necessary for running the project in Docker Playground.
 - `lightning_logs/`: Directory where TensorBoard logs will be stored.
 - `DistilBERT_MRPC_Script.py`: Python script for training the DistilBERT model.
