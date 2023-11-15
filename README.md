@@ -37,10 +37,12 @@ The base folder of the GitHub repository includes:
 4. Navigate to the directory where you want to clone the repository.
 5. Execute the setup script:
    - For Linux:
+<br></br>
      ```
      bash docker_setup_desktop_linux.sh
      ```
-   - For Windows:  
+   - For Windows: <br></br>
+     <br></br> 
      Right-click on `docker_setup_desktop_windows.ps1` and select "Run with PowerShell".
 
 6. Follow the prompts in the terminal to complete the setup.
@@ -72,7 +74,7 @@ The base folder of the GitHub repository includes:
 - Docker Build Fails: Ensure Docker is running and you have internet connectivity.
 - TensorBoard Not Accessible: Check Docker container status and port mapping.
 - Change TensorBoard Port: If port 6006 cannot be used, ***update the port mapping*** in the Dockerfile (docker run -p ***6006:6006*** project2_docker) and start.sh (tensorboard --logdir=/usr/src/app/lightning_logs --port=***6006*** --bind_all &) to use a different port.
-- For automated (Windows) powershell setup: '/docker_setup_desktop_windows.ps1' is not recognized as an internal or external command
+- Error when running automated (Windows) powershell setup script: '/docker_setup_desktop_windows.ps1' is not recognized as an internal or external command
   
 a) Check Execution Policy 
 ```bash
