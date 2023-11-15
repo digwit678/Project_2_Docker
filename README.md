@@ -75,16 +75,17 @@ The base folder of the GitHub repository includes:
 - Change TensorBoard Port: If port 6006 cannot be used, ***update the port mapping*** in the Dockerfile (docker run -p ***6006:6006*** project2_docker) and start.sh (tensorboard --logdir=/usr/src/app/lightning_logs --port=***6006*** --bind_all &) to use a different port.
 - Error when running automated (Windows) powershell setup script: '/docker_setup_desktop_windows.ps1' is not recognized as an internal or external command
   
-a) Check Execution Policy 
-```bash
-Get-ExecutionPolicy
-```  
-If the policy is set to *Restricted*, you will need to change it to allow script execution. 
+  a) Check Execution Policy 
+  ```bash
+      Get-ExecutionPolicy
+  ```  
 
-b) Change Execution Policy
-```bash
-Set-ExecutionPolicy RemoteSigned
-```  
+  If the policy is set to *Restricted*, you will need to change it to allow script execution. 
+      
+  b) Change Execution Policy
+  ```bash
+      Set-ExecutionPolicy RemoteSigned
+   ```  
 ## Docker Playground Setup
 Note: Running on Docker Playground is experimental and may face resource constraints.
 
