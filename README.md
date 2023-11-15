@@ -106,7 +106,7 @@ For Docker Playground, I have optimized the setup to work within the resource co
 and start a session.
 
 ### Steps for Docker Playground
-After accessing Docker Playground and starting a new session, follow these steps:
+Chose either to set it up automatically by using the setup script or follow the steps in the manual setup process. 
 #### Automated Setup Using Docker Desktop  
 1. Drag and drop `docker_setup_playground.sh` found in `Project_2_Docker/docker_playground/` directory into the docker playground shell to upload it
 2. Run the automated setup script in the current sessions shell:  
